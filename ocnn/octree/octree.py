@@ -273,7 +273,7 @@ class Octree:
       children[0] = 0
 
     # update octree
-    self.children[depth] = children
+    self.children[depth] = children.view(-1)
     self.nnum_nempty[depth] = nnum_nempty
 
   def octree_grow(self, depth: int, update_neigh: bool = True):

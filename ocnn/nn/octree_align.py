@@ -30,7 +30,7 @@ def search_value(value: torch.Tensor, key: torch.Tensor, query: torch.Tensor):
   found = key[idx] == query
 
   # assign the found value to the output
-  out = torch.zeros(query.shape[0], value.shape[1], device=value.device)
+  out = torch.zeros(query.shape[0], value.shape[1], device=value.device).double()
   out[found] = value[idx[found]]
   return out
 
